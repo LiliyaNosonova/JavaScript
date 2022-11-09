@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--
+Обязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+
+    <input class="text" id="form" type="text">
+    <!-- В инпуте написано:  -->
+    <span class="text_copy"></span>
+
+    <br>
+
+    <button class="messageBtn">Показать блок</button>
+    <div class="message">
+        Привет :)
+    </div>
+
+    <br>
+
+    <form class="form">
+        <label>
+            <!-- Первый инпут: -->
+            <input class="form-control" type="text">
+        </label>
+        <br>
+        <br>
+        <label class="select">
+            <!-- Второй инпут: -->
+            <select class="form-control">
+                <option value=""></option>
+                <option value="1">Один</option>
+                <option value="2">Два</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <button>Отправить</button>
+    </form>
+
+    <!-- <script> -->
+    <!-- // "use strict";
+
+/*
+1. При изменении значения в input с id="form", значение содержащееся в нем
+должно моментально отображаться в span. То есть при печати в input'е тег span
+также должен меняться.
+*/ -->
+    <script>
+        const inputEl = document.querySelector('.text');
+        const spanEl = document.querySelector('.text_copy');
+
+        inputEl.addEventListener('input', function (e) {
+            spanEl.textContent = inputEl.value
+        });
+
+    </script>
+    <!-- /*
+2. При клике на кнопку с классом messageBtn необходимо элементу с классом
+message:
+1) добавить два класса: animate_animated и animate_fadeInLeftBig
+2) поставить данному элементу стиль visibility в значение 'visible'.
+*/ -->
+    <script>
+        const buttonEl = document.querySelector('.messageBtn');
+        const messageEl = document.querySelector('.message');
+
+        buttonEl.addEventListener('click', function (e) {
+            messageEl.classList.add('animate_animate', 'animate_fadeInLeftBig')
+            console.log(messageEl.classList);
+            messageEl.setAttribute('style', 'visibility');
+            messageEl.style.visibility = 'visible';
+            console.log(messageEl.style);
+        });
+    </script>
+    <!-- /*
+3. Необходимо при отправке формы проверить, заполнены ли все поля в этой
+форме. Если какое-либо поле не заполнено, форма не должна отправляться, также
+должны быть подсвечены незаполненные поля (необходимо поставить класс error
+незаполненным полям).
+Как только пользователь начинает заполнять какое-либо поле, необходимо,
+при вводе в данное поле, произвести проверку:
+Если поле пустое, необходимо данное поле подсветить (поставить класс error
+данному полю).
+Если поле было чем-либо заполнено, подсветку (класс error) необходимо убрать.
+*/ -->
+    <script>
+
+
+        // Вариант решения без querySelectorAll
+        const textEl = document.querySelector('.form-control');
+        const labelSelectEl = document.querySelector('.select');
+        const selectEl = labelSelectEl.querySelector('.form-control');
+
+
+        document.addEventListener(('input', 'click'), function (e) {
+            textEl.classList.add('error')
+            if (textEl.value === '') {
+                textEl.classList.add('error')
+                // const formTextErrorEl = document.querySelector('.error');
+                // formTextErrorEl.style.borderColor = 'red';
+                e.preventDefault();
+            } else {
+                textEl.classList.remove('error')
+                return;
+            }
+        });
+        document.addEventListener('click', function (e) {
+            selectEl.classList.add('error')
+            if (selectEl.value == '') {
+                selectEl.classList.add('error')
+                // const formTextErrorEl = document.querySelector('.error');
+                // formTextErrorEl.style.borderColor = 'red';
+                e.preventDefault();
+            } else {
+                // formTextErrorEl.style.borderColor = 'black';
+                selectEl.classList.remove('error')
+                return;
+            }
+        });
+
+        // вариант решения с querySelectorAll - не работает, не разобралась
+        // const textEl = document.querySelectorAll('.form-control');
+
+        // textEl.forEach(element => {
+        //             //     // element.classList.add('error');
+        //     document.addEventListener(('input', 'click'), function (e) {
+        //         if (textEl.value == '') {
+        //             textEl.classList.add('error')
+        //             // const formTextErrorEl = document.querySelector('.error');
+        //             // formTextErrorEl.style.borderColor = 'red';
+        //             e.preventDefault();
+        //         } else {
+        //             // formTextErrorEl.style.borderColor = 'black';
+        //             textEl.classList.remove('error')
+        //             return;
+        //         }
+        //     });
+        //
+        // });
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
