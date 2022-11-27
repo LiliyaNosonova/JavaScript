@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato',
+        sans-serif;
+    padding-left: calc(50% - 800px);
+    padding-right: calc(50% - 570px);
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.content {
+    /* border: 1px solid #FF6A6A; */
+    height: 1395px;
+    width: 1140px;
+    left: 230px;
+    top: 1470px;
+    /* border-radius: 0px; */
+    margin-top: 96px;
+    margin-left: 230px;
+    margin-right: 230px;
+
+
+}
+
+.products_block {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: #222222;
+    margin-bottom: 6px;
+    text-align: center;
+    /* display: flex; */
+    justify-content: center;
+}
+
+.products_text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9F9F9F;
+    /* text-align: center; */
+    margin-bottom: 48px;
+}
+
+.product {
+    display: inline-block;
+    height: 587px;
+    width: 360px;
+    left: 230px;
+    top: 1576px;
+    border-radius: 0px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    background: #F8F8F8;
+}
+
+.product_img {
+    background: #F7E4E2;
+    margin-bottom: 25px;
+
+}
+
+.product_name {
+    font-style: normal;
+    font-weight: 400;
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    margin-left: 16px;
+    margin-bottom: 16px
+}
+
+.product_text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #5D5D5D;
+    margin-bottom: 16px;
+    margin-left: 16px;
+
+}
+
+.product_price {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #F16D7F;
+    margin-left: 16px;
+    /* margin-bottom: 48.5px; */
+}
+
+.products_button {
+    height: 48px;
+    width: 212px;
+    left: 695px;
+    top: 2817px;
+    border-radius: 0px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #F26376;
+    /* display: block; */
+    text-align: center;
+    /* padding: 14.5px 38.5px 13.5px 38.5px; */
+    display: flex;
+    justify-content: center;
+    /* padding-top: 14.5px; */
+    margin-left: 695.5px;
+    border: 1px solid rgba(255, 106, 106, 1)
+}

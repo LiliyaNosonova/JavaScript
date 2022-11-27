@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <div class="products_block">Fetured Items
+                <p class="products_text">Shop for items based on what we featured in this week</p>
+            </div>
+            <!-- <div class="products_button">Browse All Product</div> -->
+        </div>
+
+        <script src="data.js"></script>
+
+        <script>
+            const contentEl = document.querySelector('.content');
+
+            const data = JSON.parse(dataProducts)
+            data.forEach(item => {
+                const productEl = document.createElement('div');
+                productEl.classList.add('product');
+
+                const imgEl = document.createElement('img');
+                imgEl.classList.add('product_img');
+                imgEl.src = item.image;
+
+                const productName = document.createElement('a');
+                productName.classList.add('product_name');
+                productName.textContent = item.name;
+
+                const productDiscription = document.createElement('div');
+                productDiscription.classList.add('product_text');
+                productDiscription.textContent = item.description
+
+                const productPrice = document.createElement('div');
+                productPrice.classList.add('product_price');
+                productPrice.textContent = `$${item.price}`;
+
+
+
+
+                contentEl.appendChild(productEl);
+                productEl.appendChild(imgEl);
+                productEl.appendChild(productName);
+                productEl.appendChild(productDiscription);
+                productEl.appendChild(productPrice)
+
+            });
+
+        </script>
+
+
+        <div class="products_button">Browse All Product</div>
+    </div>
+
+
+</body>
+
+</html>
